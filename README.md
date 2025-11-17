@@ -21,7 +21,6 @@ It includes sections such as **Bio**, **Skills**, **Experience**, and **Contact 
 - HTML  
 - CSS  
 
-**💡 Example:** Take reference from online portfolio layouts or templates.
 
 ---
 
@@ -40,7 +39,6 @@ Users can **add**, **remove**, and **mark tasks as completed**. Tasks are stored
 - CSS  
 - JavaScript  
 
-**💡 Example:** Take reference from open-source To-Do app demos.
 
 ---
 
@@ -57,7 +55,6 @@ It showcases basic web structure understanding without using CSS or JS.
 **📂 Tech Used**
 - HTML  
 
-**💡 Example:** Take reference from simple online resume templates.
 
 ---
 
