@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PawHope — Animal Rescue Charity</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="nav" id="navbar">
+      <div class="brand"><i class="fa-solid fa-paw"></i> PawHope</div>
+
+      <nav>
+        <button
+          class="hamburger"
+          id="hamb"
+          aria-label="menu"
+          onclick="toggleMenu()"
+        >
+          ☰
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#adopt">Adopt</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button
+              class="theme-btn"
+              id="themeBtn"
+              onclick="toggleTheme()"
+              title="Toggle theme"
+            >
+              🌓
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div style="margin-left: 12px">
+        <button class="donate-btn" onclick="openDonate()">Donate</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-inner" data-aos="fade-up">
+        <h1>Save a Life Today — Rescue • Heal • Rehome</h1>
+        <p>
+          We are a volunteer-run animal rescue dedicated to saving injured,
+          abandoned, and vulnerable animals. Support rescue missions, sponsor
+          care, or adopt a friend.
+        </p>
+        <div class="cta-group">
+          <a class="btn-primary" href="#donate">Donate</a>
+          <a class="btn-ghost" href="#programs">Our Programs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section">
+      <div class="title">
+        <h2 data-aos="fade-up">Our Programs</h2>
+        <p class="lead" data-aos="fade-up">
+          Comprehensive initiatives that cover rescue, medical care,
+          rehabilitation, community outreach, and rehoming.
+        </p>
+      </div>
+
+      <div class="grid" data-aos="fade-up" data-aos-delay="80">
+        <div class="card">
+          <h3>24/7 Rescue Response</h3>
+          <p class="muted">
+            Rapid-response teams equipped to rescue injured or distressed
+            animals from streets, accidents, and abusive situations.
+          </p>
+          <p class="muted">
+            <strong>What we do:</strong> Emergency extraction, triage on-site,
+            transport to clinic, temporary shelter setup.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Medical & Surgical Care</h3>
+          <p class="muted">
+            On-site vets and partner clinics handle surgeries, vaccinations,
+            microchipping, and long-term treatments.
+          </p>
+          <p class="muted">
+            <strong>What we do:</strong> Spay/neuter, wound care, X-rays,
+            reconstructive surgeries, physiotherapy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Rehabilitation & Behavior</h3>
+          <p class="muted">
+            Rehab for trauma, socialization classes, behavior modification to
+            help animals adjust for adoption.
+          </p>
+          <p class="muted">
+            <strong>What we do:</strong> Feeding programs, mobility aids,
+            socialization, enrichment activities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Adoption & Fostering</h3>
+          <p class="muted">
+            We match animals with vetted adoptive families and coordinate
+            foster-care for long recoveries.
+          </p>
+          <p class="muted">
+            <strong>What we do:</strong> Home checks, adoption counseling, trial
+            periods and post-adoption follow-up.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Community Outreach</h3>
+          <p class="muted">
+            Education programs in schools & neighborhoods to promote humane
+            treatment and responsible pet care.
+          </p>
+          <p class="muted">
+            <strong>What we do:</strong> Sterilization drives, feeding camps,
+            awareness workshops.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Wildlife Assistance</h3>
+          <p class="muted">
+            Rescue service for urban wildlife and coordination with wildlife
+            rehab centers for species-specific needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADOPTION LIST -->
+    <section id="adopt" class="section" style="padding-top: 40px">
+      <div class="title">
+        <h2 data-aos="fade-up">Available for Adoption</h2>
+        <p class="lead" data-aos="fade-up">
+          Meet some of the animals currently in our care — click any profile to
+          view more and start the adoption process.
+        </p>
+      </div>
+
+      <div class="adopt-grid" data-aos="fade-up" data-aos-delay="60">
+        <div
+          class="pet-card"
+          onclick="openPetModal(0)"
+          role="button"
+          tabindex="0"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=60"
+            alt="Snowy the cat"
+          />
+          <div class="meta">
+            <h4>Snowy • 2 yrs (Cat)</h4>
+            <p class="muted">Friendly, vaccinated, good with other cats.</p>
+          </div>
+        </div>
+
+        <div
+          class="pet-card"
+          onclick="openPetModal(1)"
+          role="button"
+          tabindex="0"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=60"
+            alt="Bruno the dog"
+          />
+          <div class="meta">
+            <h4>Bruno • 3 yrs (Dog)</h4>
+            <p class="muted">Playful and energetic, needs regular exercise.</p>
+          </div>
+        </div>
+
+        <div
+          class="pet-card"
+          onclick="openPetModal(2)"
+          role="button"
+          tabindex="0"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=60"
+            alt="Luna the kitten"
+          />
+          <div class="meta">
+            <h4>Luna • 1 yr (Cat)</h4>
+            <p class="muted">Shy at first, affectionate once comfortable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section" style="padding-top: 10px">
+      <div class="title">
+        <h2 data-aos="fade-up">Moments from Rescue</h2>
+        <p class="lead" data-aos="fade-up">
+          Photos from rescues, recoveries, and happy adoptions.
+        </p>
+      </div>
+
+      <div class="gallery" data-aos="zoom-in">
+        <img
+          src="https://images.unsplash.com/photo-1734174052085-993bd0899037?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9tZW50cyUyMGZyb20lMjByZXNjdWUlMjBhbmltYWxzfGVufDB8fDB8fHww"
+          alt="gallery"
+          onclick="openLightbox(this.src)"
+        />
+        <img
+          src="https://plus.unsplash.com/premium_photo-1667860901695-aede54fe01a8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9tZW50cyUyMGZyb20lMjByZXNjdWUlMjBhbmltYWxzfGVufDB8fDB8fHww"
+          alt="gallery"
+          onclick="openLightbox(this.src)"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1657532697743-f96c2d31fa19?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9tZW50cyUyMGZyb20lMjByZXNjdWUlMjBhbmltYWxzfGVufDB8fDB8fHww"
+          alt="gallery"
+          onclick="openLightbox(this.src)"
+        />
+        <img
+          src="https://media.istockphoto.com/id/2230510682/photo/kitten-being-bottle-fed-by-a-caregiver-in-a-veterinary-setting-during-the-day.webp?a=1&b=1&s=612x612&w=0&k=20&c=AHVPN_ueXms9wqskzI8kOB2VK8XPcMuB9dteCR1uBL8="
+          alt="gallery"
+          onclick="openLightbox(this.src)"
+        />
+      </div>
+    </section>
+
+    <!-- IMPACT / COUNTERS -->
+    <section id="impact" class="section">
+      <div class="title">
+        <h2 data-aos="fade-up">Our Impact</h2>
+        <p class="lead" data-aos="fade-up">
+          Numbers that show the lives we touch, together.
+        </p>
+      </div>
+
+      <div class="stats" data-aos="fade-up">
+        <div class="stat">
+          <h3 class="num" data-target="1289">0</h3>
+          <p>Animals Rescued</p>
+        </div>
+        <div class="stat">
+          <h3 class="num" data-target="420">0</h3>
+          <p>Adoptions</p>
+        </div>
+        <div class="stat">
+          <h3 class="num" data-target="320">0</h3>
+          <p>Volunteers</p>
+        </div>
+        <div class="stat">
+          <h3 class="num" data-target="52">0</h3>
+          <p>Active Shelters</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + VOLUNTEER -->
+    <section id="contact" class="section">
+      <div class="title">
+        <h2 data-aos="fade-up">Get Involved — Contact & Volunteer</h2>
+        <p class="lead" data-aos="fade-up">
+          Questions, volunteering, corporate partnerships, or media — reach out
+          below.
+        </p>
+      </div>
+
+      <div
+        class="grid"
+        style="grid-template-columns: 1fr 380px; align-items: start; gap: 28px"
+      >
+        <!-- contact form -->
+        <div data-aos="fade-up">
+          <form id="contactForm" class="form" onsubmit="handleContact(event)">
+            <input name="name" placeholder="Your name" required />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email address"
+              required
+            />
+            <input name="subject" placeholder="Subject" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <div class="actions">
+              <button type="submit">Send Message</button>
+              <button type="button" onclick="openVolunteer()">Volunteer</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- donate & quick info -->
+        <aside data-aos="fade-up" class="card">
+          <h3>Ways to donate</h3>
+          <p class="muted">
+            We accept one-time gifts, monthly sponsorships, supplies, and
+            corporate partnerships.
+          </p>
+          <div
+            style="
+              margin-top: 12px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            "
+          >
+            <button class="btn-primary" onclick="openDonate()">
+              Donate Online
+            </button>
+            <button class="btn-ghost" onclick="scrollToElement('#adopt')">
+              Sponsor a Pet
+            </button>
+            <div style="margin-top: 12px" class="muted">
+              <strong>Bank transfer</strong><br />
+              Account: 1234567890 (PawHope) — IFSC: ABCD0000
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div
+        style="
+          display: flex;
+          gap: 18px;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 12px;
+        "
+      >
+        <a
+          href="https://www.facebook.com/jaganmohanreddy.rjmr"
+          style="color: var(--muted)"
+          ><i class="fa-brands fa-facebook fa-lg"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/mr_romantic_of_nature_143/"
+          style="color: var(--muted)"
+          ><i class="fa-brands fa-instagram fa-lg"></i
+        ></a>
+        <a href="https://x.com/NAKE_THELIDHU" style="color: var(--muted)"
+          ><i class="fa-brands fa-twitter fa-lg"></i
+        ></a>
+      </div>
+      <div style="color: var(--muted)">
+        © 2025 PawHope Rescue — Protecting animals, changing lives.
+      </div>
+    </footer>
+
+    <!-- Floating donate -->
+    <a class="donate-floating" onclick="openDonate()" title="Donate">
+      <i class="fa-solid fa-heart"></i> Donate
+    </a>
+
+    <!-- MODAL: PET DETAILS -->
+    <div id="petModal" class="overlay" role="dialog" aria-hidden="true">
+      <div class="modal" role="document" aria-modal="true">
+        <div
+          style="
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+          "
+        >
+          <img id="petImage" src="" alt="pet" />
+          <div class="info">
+            <h3 id="petName">Name • Age</h3>
+            <p class="muted" id="petBio">Bio</p>
+            <p style="margin-top: 12px">
+              <strong>Vaccinated:</strong> <span id="petVax">Yes</span>
+            </p>
+            <p>
+              <strong>Good with:</strong> <span id="petGood">Other pets</span>
+            </p>
+            <div style="margin-top: 14px; display: flex; gap: 10px">
+              <button class="btn-primary" onclick="applyAdoption()">
+                Apply to Adopt
+              </button>
+              <button class="btn-ghost" onclick="closePetModal()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: LIGHTBOX -->
+    <div id="lightbox" class="overlay" onclick="closeLightbox()">
+      <img
+        id="lightboxImg"
+        src=""
+        alt="lightbox"
+        style="max-width: 95%; border-radius: 10px"
+      />
+    </div>
+
+    <!-- MODAL: DONATE -->
+    <div id="donateModal" class="overlay" aria-hidden="true">
+      <div class="modal">
+        <h3>Donate to PawHope</h3>
+        <p class="muted">
+          Choose an option below to support rescue, medical care, and shelter.
+        </p>
+        <div
+          style="display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap"
+        >
+          <button onclick="donateAmount(500)" class="btn-primary">₹500</button>
+          <button onclick="donateAmount(1200)" class="btn-primary">
+            ₹1200
+          </button>
+          <button onclick="donateAmount(2500)" class="btn-primary">
+            ₹2500
+          </button>
+        </div>
+        <p style="margin-top: 12px" class="muted">Or enter a custom amount:</p>
+        <div style="display: flex; gap: 8px; margin-top: 8px">
+          <input
+            id="customAmount"
+            placeholder="₹ Amount"
+            style="
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid rgba(255, 255, 255, 0.06);
+              background: transparent;
+              color: var(--text);
+            "
+          />
+          <button class="btn-primary" onclick="donateCustom()">Donate</button>
+        </div>
+        <div style="margin-top: 12px" class="center">
+          <button class="btn-ghost" onclick="closeDonate()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: VOLUNTEER FORM -->
+    <div id="volModal" class="overlay" aria-hidden="true">
+      <div class="modal">
+        <h3>Volunteer Registration</h3>
+        <p class="muted">
+          Join our volunteer community — we need hands for rescues, fosters,
+          events and awareness.
+        </p>
+        <form
+          id="volForm"
+          class="form"
+          onsubmit="handleVolunteer(event)"
+          style="margin-top: 12px"
+        >
+          <input name="vname" placeholder="Full name" required />
+          <input name="vemail" type="email" placeholder="Email" required />
+          <input name="vphone" placeholder="Phone number" required />
+          <select name="vrole" required>
+            <option value="">Choose role</option>
+            <option>Rescue Team</option>
+            <option>Foster Carer</option>
+            <option>Event Volunteer</option>
+            <option>Medical Assistant</option>
+          </select>
+          <textarea
+            name="vnote"
+            placeholder="Why do you want to volunteer?"
+          ></textarea>
+          <div class="actions" style="margin-top: 10px">
+            <button type="submit" class="btn-primary">Apply</button>
+            <button type="button" class="btn-ghost" onclick="closeVolunteer()">
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
