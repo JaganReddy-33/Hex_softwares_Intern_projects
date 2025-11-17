@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">MyMusic</div>
+      <div class="menu-item">Home</div>
+      <div class="menu-item">Search</div>
+      <div class="menu-item">Your Library</div>
+    </div>
+
+    <main class="main">
+      <div class="header">Trending Songs</div>
+      <section class="playlist" id="playlist"></section>
+    </main>
+
+    <!-- single audio element -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <!-- Bottom player (full) -->
+    <div class="bottom-player" aria-label="player">
+      <div class="player-left">
+        <img id="cover" src="" alt="cover" />
+        <div class="song-info">
+          <h4 id="title">—</h4>
+          <p id="artist">—</p>
+        </div>
+      </div>
+
+      <div class="player-center">
+        <div class="controls">
+          <button id="shuffle" title="Shuffle">🔀</button>
+          <button id="prev" title="Previous">⏮</button>
+          <button id="play" title="Play">▶</button>
+          <button id="next" title="Next">⏭</button>
+          <button id="repeat" title="Repeat">🔁</button>
+        </div>
+
+        <input
+          id="seek"
+          class="seek"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="seek"
+        />
+        <div class="time-row">
+          <span id="current">0:00</span><span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="player-right">
+        <div class="extra-controls">
+          <button id="like" title="Like">♡</button>
+        </div>
+        <input
+          id="volume"
+          class="volume"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          aria-label="volume"
+        />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
